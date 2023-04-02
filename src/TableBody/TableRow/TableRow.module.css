@@ -1,0 +1,47 @@
+.team__string{
+    margin-top: 5px;
+    display: flex;
+    background-color: aquamarine;
+    height: 30px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    vertical-align: middle;
+}
+
+.team__string:hover{
+    cursor: pointer;
+    background-color: aqua;
+}
+
+.team__position{
+    margin-left: 10px;
+    min-width: 30px;
+}
+
+.team__name{
+   min-width: 230px; 
+}
+
+.match__counter{
+    min-width: 20px;
+}
+
+.win__count{
+    min-width: 20px;
+}
+
+.draw__count{
+    min-width: 20px;
+}
+
+.losses__count{
+    min-width: 20px;
+}
+
+.goals_defference_str{
+    min-width: 30px;
+}
+
+.points__count{
+    min-width: 20px;
+}
