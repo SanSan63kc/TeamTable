@@ -1,5 +1,5 @@
 import classes from "./TableRow.module.css"
-import { TeamData } from "../TableBody"
+import { TeamData } from "../../App"
 
 
 export default function TableRow(props: TeamData){

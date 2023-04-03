@@ -8,6 +8,24 @@
     vertical-align: middle;
 }
 
+.championsLigue{
+    background-color: blue;
+}
+
+.europeLigue{
+    background-color: green;
+}
+
+.conferenceLigue{
+    background-color: greenyellow;
+}
+
+.outsider{
+    background-color: red;
+}
+
+
+
 .team__string:hover{
     cursor: pointer;
     background-color: aqua;
