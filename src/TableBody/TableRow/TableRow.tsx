@@ -3,8 +3,13 @@ import { TeamData } from "../../App"
 
 
 export default function TableRow(props: TeamData){
+    let additionalClass: string = props.championsLigueFlag ? " " + classes.championsLigue : 
+                            props.europeLigueFlag ? " " + classes.europeLigue : 
+                            props.conferenceLigueFlag ? " " + classes.conferenceLigue :
+                            props.outsiderFlag ? " " + classes.outsider : ""
+
     return (
-        <div className={classes.team__string}>
+        <div className={classes.team__string + additionalClass}>
                 <div className={classes.team__position}>{props.position}</div>{/* Позиция */}
                 <div className={classes.team__name}>{props.teamName}</div>{/* Имя команды */}
                 <div className={classes.match__counter}>{props.matchCounter}</div>{/* количество игр */}
