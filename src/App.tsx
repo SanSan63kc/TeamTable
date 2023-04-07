@@ -1,4 +1,5 @@
 
+import { AddResult } from './AddResult/AddResult';
 import classes from './App.module.css';
 import TableBody from './TableBody/TableBody';
 
@@ -23,7 +24,7 @@ export type TeamData = {
   outsiderFlag: boolean,        // стоят на выбывание 
 }
 
-let startSeasonDate: Array<TeamData>  = [
+export let startSeasonDate: Array<TeamData>  = [
   {
     id: 1,
     teamName: "Ахмат",
@@ -444,9 +445,16 @@ modifyTable(matcResults)
 
 
 function App() {
-  return (  <div className={classes.container}>
-    <TableBody tasks={startSeasonDate}/>
-  </div> 
+  return (  <div>
+    <div className={classes.container}>
+      <TableBody tasks={startSeasonDate}/>
+    </div> 
+
+    <div className={classes.container}>
+      <AddResult/>
+    </div>
+    
+  </div>
   );
 }
 
