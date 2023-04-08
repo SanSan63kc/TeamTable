@@ -6,3 +6,13 @@
     max-width: 20px;
     text-align: center; 
 }
+
+.error{
+    border: red 2px solid;
+}
+
+.error__message{
+    font-size: 12px;
+    font-style: italic;
+    color: red;
+}
