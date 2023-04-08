@@ -1,43 +1,70 @@
 import { startSeasonDate } from "../App"
+import classes from './AddResult.module.css';
 
-function checkInputTeamName(homeTemNameValue: string, guestTemNameValue: string):boolean{
+// пока эта функция не нужна
+/* function checkInputTeamName(homeTemNameValue: string, guestTemNameValue: string):boolean{
     if (homeTemNameValue === guestTemNameValue){
         return false
     } else return true
+} */
+
+type newResultObjType = {
+    homeTeamName: string,
+    guestTeamName: string,
+    homeTeamGoals: string,
+    guestTeamGoals: string,     
 }
 
-let AddTeam: string[] = ["", ""] /* временное хранилище имен сыгравших команд */
+let newResultObj = {
+    homeTeamName: "",
+    guestTeamName: "",
+    homeTeamGoals: "",
+    guestTeamGoals: "",
+}
 
 export function AddResult(){
 
     function addResult():void{
-        console.log("нажал кнопку добавить результат")
+        /* заготовим строку для массива */
+        /* "1:0 Динамо - Торпедо" */
+        console.log(`${newResultObj.homeTeamGoals}:${newResultObj.guestTeamGoals} ${newResultObj.homeTeamName} - ${newResultObj.guestTeamName}`)
     }
 
     return (
-        <div>
-           <select name="homeTeamName" id="">
-            {
-                startSeasonDate.map(obj=>{
-                    return <option value={obj.teamName}>{obj.teamName}</option>
-                })
+        <div className={classes.addResult__form}>
+            <div>
+                <select name="homeTeamName" id="" onChange={e=>{
+                    newResultObj.homeTeamName = (e.target.value)
+                }}>
                 
-            }            
-            </select>
-            <select name="guestTeamName" id="">
-            {
-                startSeasonDate.map(obj=>{
-                    return <option value={obj.teamName}>{obj.teamName}</option>
-                })
-            }            
-            </select>
+                {startSeasonDate.map(obj=>{
+                        return <option value={obj.teamName}>{obj.teamName}</option>})
+                }            
+                </select>
+
+                <select name="guestTeamName" id="" onChange={e=>{
+                    newResultObj.guestTeamName = (e.target.value)
+                }}>
+                
+                {startSeasonDate.map(obj=>{
+                        return <option value={obj.teamName}>{obj.teamName}</option>})
+                }            
+                </select>
+            </div>
             
-            <input type="homeTeamGoals" /> {/* поле ввода голов хозяев поля */}
-            <input type="guestTeamGoals" />{/* поле ввода голов хозяев поля */}
+            <div>
+                {/* поле ввода голов хозяев поля */}
+                <input className={classes.goals__input + " " + classes.left__input } onChange={e =>{
+                    newResultObj.homeTeamGoals = e.target.value}}/> 
+
+                {/* поле ввода голов хозяев поля */}
+                <input className={classes.goals__input} onChange={e =>{
+                    newResultObj.guestTeamGoals = e.target.value}}/>
+            </div>
+            
 
             <button onClick={addResult}>Добавить результат</button>
 
-            
         </div>
     )
 }

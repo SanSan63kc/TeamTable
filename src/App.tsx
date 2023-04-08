@@ -1,4 +1,5 @@
 
+import { useState } from 'react';
 import { AddResult } from './AddResult/AddResult';
 import classes from './App.module.css';
 import TableBody from './TableBody/TableBody';
@@ -428,7 +429,7 @@ export function modifyTable(results: string[]): /* string */ void {
   })
 }
 
-var matcResults = [      
+let matcResults = [      
   "2:4 Оренбург - Крылья Советов",
   "1:0 ЦСКА - Зенит",
   "1:0 Динамо - Торпедо",
@@ -439,6 +440,7 @@ var matcResults = [
   "4:0 Крылья Советов - Локомотив",
   // добавить массив результатов
 ];
+
 
 modifyTable(matcResults)
 // конец нехорошего временного куска кода
