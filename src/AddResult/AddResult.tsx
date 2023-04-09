@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { startSeasonDate } from "../App"
+import { startSeasonDate } from "../TableBody/TableBody";
 import classes from './AddResult.module.css';
 
 type newResultObjType = {
@@ -16,7 +16,11 @@ let newResultObj: newResultObjType = {
     guestTeamGoals: "",
 }
 
-export function AddResult(){
+type AddResultPropsType = {
+    addNewResult: (newResult:string)=>void
+}
+
+export function AddResult(props: AddResultPropsType){
 
     let [errorHomeTeamName, setErrorHomeTeamName] = useState<string|null>(null)
     let [errorGuestTeamName, setErrorGuestTeamName] = useState<string|null>(null)
@@ -61,6 +65,7 @@ export function AddResult(){
         }
 
         if (!errorHomeTeamName && !errorGuestTeamName && !errorHomeTeamGoals && !errorGuestTeamGoals){
+            props.addNewResult(`${newResultObj.homeTeamGoals}:${newResultObj.guestTeamGoals} ${newResultObj.homeTeamName} - ${newResultObj.guestTeamName}`)
             console.log(`${newResultObj.homeTeamGoals}:${newResultObj.guestTeamGoals} ${newResultObj.homeTeamName} - ${newResultObj.guestTeamName}`)
         }
     }
@@ -68,23 +73,27 @@ export function AddResult(){
     return (
         <div className={classes.addResult__form}>
             <div>
+                {/* Поле ввода команды хозяев поля, подумать как уйти к компоненте */}
                 <select name="homeTeamName" id="" className={errorHomeTeamName ? " " + classes.error: ""} onChange={e=>{
                     setErrorHomeTeamName("")
                     newResultObj.homeTeamName = (e.target.value)               
                 }}>
                 
                 {startSeasonDate.map(obj=>{
-                        return <option value={obj.teamName}>{obj.teamName}</option>})
+                        return <option key={obj.id} /* убрать красноту из console */
+                                value={obj.teamName}>{obj.teamName}</option>})
                 }            
                 </select>
 
+                {/* Поле ввода команды гостей, подумать как уйти к компоненте */}
                 <select placeholder="" name="guestTeamName" id="" className={errorGuestTeamName ? " " + classes.error: ""} onChange={e=>{
                     setErrorGuestTeamName("")
                     newResultObj.guestTeamName = (e.target.value)              
                 }}>
                 
                 {startSeasonDate.map(obj=>{
-                        return <option value={obj.teamName}>{obj.teamName}</option>})
+                        return <option key={obj.id} /* убрать красноту из console */
+                                value={obj.teamName}>{obj.teamName}</option>})
                 }            
                 </select>
             </div>
