@@ -9,9 +9,12 @@ export default function TableRow(props: TeamData){
                             props.outsiderFlag ? " " + classes.outsider : ""
 
     return (
-        <div className={classes.team__string + additionalClass}>
+        <div className={classes.team__string    + additionalClass}>
                 <div className={classes.team__position}>{props.position}</div>{/* Позиция */}
-                <div className={classes.team__name}>{props.teamName}</div>{/* Имя команды */}
+                <div className={classes.team__name}>
+                    <div className={classes.team__name__title}>
+                        {props.teamName.toUpperCase()}</div>
+                </div>{/* Имя команды */}
                 <div className={classes.match__counter}>{props.matchCounter}</div>{/* количество игр */}
                 <div className={classes.win__count}>{props.winCount}</div>{/* Количество побед */}
                 <div className={classes.draw__count}>{props.drawCount}</div>{/* Количество ничьих */}

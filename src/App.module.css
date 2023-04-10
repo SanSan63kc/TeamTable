@@ -1,12 +1,54 @@
+body{
+    margin: 0;
+    /* font-family:'Raleway', 'sans-serif';  шрифт потом подключить другой*/
+    /* font-size: 14px;
+    color:#6c7279; */
+    /* background-color: #fff; */
+}
+
+*,
+*:before, 
+*:after{
+    box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+
+p{
+    margin: 0 0 10px;
+}
+
+
+.main__fone{
+    background: #31344e url("../img/fone-1.jpg") ;
+    background-size: 100%;    
+}
+
+.main__fone__1{
+    background: #31344e url("../img/fone-1.jpg") ;
+    background-size: 100%;    
+}
+
+.main__fone__2{
+    background: #31344e url("../img/fone-2.jpg") ;
+    background-size: 100%;    
+}
+
+.main__fone__3{
+    background: #31344e url("../img/fone-3.jpg") ;
+    background-size: 100%;    
+}
+
 .container{ 
     padding: 0 15px;
     padding-top: 10px;
     padding-bottom: 10px;   
     width: 100%;
-    max-width: 410px;
+    max-width: 440px;
     margin: 0 auto;
-    margin-top: 50px;       
+    margin-top: 15px;       
     background-color: rgb(212, 203, 203);
     border-radius: 5px;
-    
 }

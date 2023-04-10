@@ -1,34 +1,37 @@
 .team__string{
     margin-top: 5px;
     display: flex;
-    background-color: aquamarine;
+    background-color:  rgb(45, 44, 44);
     height: 30px;
-    border: 2px solid gray;
-    border-radius: 10px;
+    color: white;
+    font-weight: 400;
+    /* border: 1px solid white; */
+    border-radius: 2px;
     vertical-align: middle;
 }
 
 .championsLigue{
-    background-color: blue;
+    /* background-color: blue; */
 }
 
 .europeLigue{
-    background-color: green;
+    /* background-color: green; */
 }
 
 .conferenceLigue{
-    background-color: greenyellow;
+    /* background-color: greenyellow; */
 }
 
 .outsider{
-    background-color: red;
+    /* background-color: red; */
 }
 
 
 
 .team__string:hover{
     cursor: pointer;
-    background-color: aqua;
+    background-color: white;
+    color: rgb(45, 44, 44);
 }
 
 .team__position{
@@ -37,29 +40,78 @@
 }
 
 .team__name{
-   min-width: 230px; 
+   min-width: 180px; 
+}
+
+.team__name__title{
+    width: max-content;
+}
+
+/* .team__string:hover .team__name__title::after {
+    content:"";
+    display: block;
+    width: auto;
+    height: 3px;
+    background-color: rgb(45, 44, 44);
+    margin: 3px auto;
+} */
+
+.team__string.championsLigue:hover .team__name__title::after{
+    content:"";
+    display: block;
+    width: auto;
+    height: 3px;
+    background-color: blue;
+    margin: 1px auto;
+}
+
+.team__string.europeLigue:hover .team__name__title::after{
+    content:"";
+    display: block;
+    width: auto;
+    height: 3px;
+    background-color: green;
+    margin: 1px auto;
+}
+
+.team__string.conferenceLigue:hover .team__name__title::after{
+    content:"";
+    display: block;
+    width: auto;
+    height: 3px;
+    background-color: darkslategrey;
+    margin: 1px auto;
+}
+
+.team__string.outsider:hover .team__name__title::after{
+    content:"";
+    display: block;
+    width: auto;
+    height: 3px;
+    background-color: red;
+    margin: 1px auto;
 }
 
 .match__counter{
-    min-width: 20px;
+    min-width: 25px;
 }
 
 .win__count{
-    min-width: 20px;
+    min-width: 25px;
 }
 
 .draw__count{
-    min-width: 20px;
+    min-width: 25px;
 }
 
 .losses__count{
-    min-width: 20px;
+    min-width: 25px;
 }
 
 .goals_defference_str{
-    min-width: 30px;
+    min-width: 60px;
 }
 
 .points__count{
-    min-width: 20px;
+    min-width: 25px;
 }

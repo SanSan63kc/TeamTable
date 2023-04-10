@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { useState } from 'react';
 import { AddResult } from './AddResult/AddResult';
 import classes from './App.module.css';
@@ -24,16 +24,48 @@ function App() {
     setResult(newResults)
   }
 
-  return (  <div>
-    <div className={classes.container}>
-      <TableBody results={startResults}/>
-    </div> 
+  /* пробую поменять фон (начало)*/
 
-    <div className={classes.container}>
-      <AddResult addNewResult={addNewResult}/>
+  /* let [addFoneClass, setFoneClass] = useState(classes.main__fone__2)
+
+  let arr=[1,2,3]
+  let i=0
+  function logger(){
+
+  if (arr[i]==1){
+    setFoneClass(classes.main__fone__1)
+    console.log("поменял фон на 1")
+  } else if (arr[i]==2){
+    setFoneClass(classes.main__fone__2)
+    console.log("поменял фон на 2")
+  } else if (arr[i]==3){
+    setFoneClass(classes.main__fone__3)
+    console.log("поменял фон на 3")
+  }
+  i++
+  if (i==arr.length){
+    i=0
+  }
+  }
+
+  let timerId = setInterval(logger, 10000, arr) */
+
+  /* пробую поменять фон (конец)*/
+
+
+  return (  
+    <div>
+      <div className={classes.main__fone /* + " " + addFoneClass */}>
+      {/* подумать про бегущую строку */}
+        <div className={classes.container}>
+          <TableBody results={startResults}/>
+        </div> 
+
+        <div className={classes.container}>
+          <AddResult addNewResult={addNewResult}/>
+        </div>    
+      </div>
     </div>
-    
-  </div>
   );
 }
 
